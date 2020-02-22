@@ -1,0 +1,35 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<div class="row my-grid-borders">
+    <p> Here I am going to put a general explanation about the Data</p>
+</div>
+<div class="row my-grid-borders">
+    <div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_trump }} alt='Missing'></div>
+    <div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_obama }} alt='Missing'></div>
+    <div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_bush }} alt='Missing'></div>
+    <div class="col-md-2 my-grid-borders"><img class="contain" src={{ img_clinton }} alt='Missing'></div>
+</div>
+<div class="row my-grid-borders">
+    <div class="col-md-5 my-grid-borders"><a href="{{ url_for('trump') }}">Trump Dataset</a></div>
+    <div class="col-md-5 my-grid-borders">Explanation of Trump data</div>
+</div>
+<div class="row my-grid-borders">
+    <div class="col-md-5 my-grid-borders">A reference to Obama data</div>
+    <div class="col-md-5 my-grid-borders">Explanation of Obama data</div>
+</div>
+<div class="row my-grid-borders">
+    <div class="col-md-5 my-grid-borders">A reference to Bush data</div>
+    <div class="col-md-5 my-grid-borders">Explanation of Bush data</div>
+</div>
+<div class="row my-grid-borders">
+    <div class="col-md-5 my-grid-borders">A reference to Clinton data</div>
+    <div class="col-md-5 my-grid-borders">Explanation of Clinton data</div>
+</div>
+
+
+{% endblock %}

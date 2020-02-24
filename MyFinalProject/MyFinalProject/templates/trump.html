@@ -51,9 +51,18 @@
     </table>
 </div>
 <div class="row my-grid-borders">
-    <div class="col-md-5 my-grid-borders">{{ wtf.quick_form(form1) }}</div>
-    <div class="col-md-5 my-grid-borders">{{ wtf.quick_form(form2) }}</div>
-</div>
+    <div class="col-md-5 my-grid-borders">
+        <form  method="post">
+                {{ form1.csrf_token }}
+                <input class="btn btn-success" type="submit" name="action" value="Expand">
+        </form>
+    </div>
+    <div class="col-md-5 my-grid-borders">
+        <form method="post">
+            {{ form2.csrf_token }}
+            <input class="btn btn-danger" type="submit" name="action" value="Collapse">
+        </form>
+    </div>
 <div class="row my-grid-borders">
     {{ raw_data_table | safe}}
 </div>

@@ -27,12 +27,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MyFinalProject\Models\Forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="MyFinalProject\__init__.py" />
     <Compile Include="MyFinalProject\views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MyFinalProject\" />
+    <Folder Include="MyFinalProject\Models\" />
     <Folder Include="MyFinalProject\static\" />
     <Folder Include="MyFinalProject\static\content\" />
     <Folder Include="MyFinalProject\static\fonts\" />
@@ -51,6 +55,7 @@
     <Content Include="MyFinalProject\static\imgs\obama.jpg" />
     <Content Include="MyFinalProject\static\imgs\trump.jpg" />
     <Content Include="MyFinalProject\templates\data.html" />
+    <Content Include="MyFinalProject\templates\project_resources.html" />
     <Content Include="MyFinalProject\templates\trump.html" />
     <Content Include="requirements.txt" />
     <Content Include="MyFinalProject\static\content\bootstrap.css" />

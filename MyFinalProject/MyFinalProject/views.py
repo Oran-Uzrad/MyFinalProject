@@ -13,9 +13,13 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
+from MyFinalProject.Models.Forms import ExpandForm
+from MyFinalProject.Models.Forms import CollapseForm
+
+
+
 from os import path
 from flask_bootstrap import Bootstrap
-
 bootstrap = Bootstrap(app)
 
 
@@ -65,6 +69,20 @@ def data():
         img_clinton = '/static/imgs/clinton.jpg'
     )
 
+@app.route('/project_resources')
+def project_resources():
+    """Renders the about page."""
+    return render_template(
+        'project_resources.html'
+    )
+
+@app.route('/hebrew_text')
+def hebrew_text():
+    """Renders the about page."""
+    return render_template(
+        'hebrew_text.html'
+    )
+
 @app.route('/data/trump' , methods = ['GET' , 'POST'])
 def trump():
     """Renders the about page."""
@@ -73,23 +91,13 @@ def trump():
     df = pd.read_csv(path.join(path.dirname(__file__), 'static\\data\\trump.csv'))
     raw_data_table = ''
 
-    if form1.submit1.data and form1.validate():
-        print("999")
-        raw_data_table = df.to_html(classes = 'table table-hover')
+    if request.method == 'POST':
+        if request.form['action'] == 'Expand' and form1.validate_on_submit():
+            raw_data_table = df.to_html(classes = 'table table-hover')
+        if request.form['action'] == 'Collapse' and form2.validate_on_submit():
+            raw_data_table = ''
 
-    if form2.submit2.data and form2.validate():
-        print("888")
-        raw_data_table = ''
-
-
-#    if form1.validate_on_submit():
-#        print("999")
-#        raw_data_table = df.to_html(classes = 'table table-hover')
-#    elif form2.validate_on_submit():
-#        print("888")
-#        raw_data_table = ''
-
-
+    
 
     return render_template(
         'trump.html',
@@ -104,16 +112,5 @@ def trump():
         form1 = form1,
         form2 = form2
     )
-
-
-class ExpandForm(FlaskForm):
-    submit1 = SubmitField('Expand')
-    name="Expand" 
-    value="Expand"
-
-class CollapseForm(FlaskForm):
-    submit2 = SubmitField('Collapse')
-    name="Collapse" 
-    value="Collapse"
 
 

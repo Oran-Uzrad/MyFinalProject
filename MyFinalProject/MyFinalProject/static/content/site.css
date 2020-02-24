@@ -42,7 +42,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .my-grid-borders {
-    border-style: solid;
+    border-style: none;
     border-color: green;
     padding: 10px;
     margin: 10px;
@@ -51,4 +51,23 @@ input[type="checkbox"].input-validation-error {
 .contain {
     width: 100%;
     object-fit: contain;
+}
+
+.navbar-custom {
+    background-color: firebrick;
+    color: snow;
+}
+
+.navbar-custom1 {
+    color: snow;
+}
+
+.jumbotron-hebrew-calibri {
+    font-family: Tahoma, Geneva, sans-serif;
+    direction: rtl;
+}
+
+.heb {
+    font-family: Tahoma, Geneva, sans-serif;
+    direction: rtl;
 }

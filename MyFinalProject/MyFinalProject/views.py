@@ -108,7 +108,8 @@ def trump():
     """Renders the about page."""
     form1 = ExpandForm()
     form2 = CollapseForm()
-    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\data\\trump.csv'))
+    # df = pd.read_csv(path.join(path.dirname(__file__), 'static\\data\\trump.csv'))
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/trump.csv'))
     raw_data_table = ''
 
     if request.method == 'POST':

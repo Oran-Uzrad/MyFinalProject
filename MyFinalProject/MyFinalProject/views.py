@@ -28,7 +28,11 @@ bootstrap = Bootstrap(app)
 @app.route('/')
 @app.route('/home')
 def home():
+
+    print("Home")
+
     """Renders the home page."""
+    
     return render_template(
         'index.html',
         title='Home Page',
@@ -37,7 +41,11 @@ def home():
 
 @app.route('/contact')
 def contact():
+
+    print("Contact")
+
     """Renders the contact page."""
+
     return render_template(
         'contact.html',
         title='Contact',
@@ -47,6 +55,9 @@ def contact():
 
 @app.route('/about')
 def about():
+
+    print("About")
+
     """Renders the about page."""
     return render_template(
         'about.html',
@@ -57,13 +68,16 @@ def about():
 
 @app.route('/data')
 def data():
+
+    print("Data")
+
     """Renders the about page."""
     return render_template(
         'data.html',
         title='Data',
         year=datetime.now().year,
         message='My data page.',
-        img_trump = '/static/imgs/trump.jpg',
+        img_trump = '/static/imgs/obama.jpg',
         img_obama = '/static/imgs/obama.jpg',
         img_bush = '/static/imgs/bush.jpg',
         img_clinton = '/static/imgs/clinton.jpg'
@@ -71,6 +85,9 @@ def data():
 
 @app.route('/project_resources')
 def project_resources():
+
+    print("Project Resources")
+
     """Renders the about page."""
     return render_template(
         'project_resources.html'
@@ -85,6 +102,9 @@ def hebrew_text():
 
 @app.route('/data/trump' , methods = ['GET' , 'POST'])
 def trump():
+
+    print("Trump")
+
     """Renders the about page."""
     form1 = ExpandForm()
     form2 = CollapseForm()

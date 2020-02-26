@@ -22,7 +22,7 @@ from os import path
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
 
-
+app.config['SECRET_KEY'] = 'The first argument to the field'
 
 
 @app.route('/')

@@ -134,4 +134,15 @@ def trump():
         form2 = form2
     )
 
+@app.route('/tracking_changes')
+def tracking_changes():
 
+    print("Tracking Changes")
+
+    """Renders the about page."""
+    return render_template(
+        'tracking_changes.html',
+        title='Tracking changes to the site',
+        year=datetime.now().year,
+        message=''
+    )

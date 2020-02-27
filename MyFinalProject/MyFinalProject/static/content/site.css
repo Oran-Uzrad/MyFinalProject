@@ -71,3 +71,15 @@ input[type="checkbox"].input-validation-error {
     font-family: Tahoma, Geneva, sans-serif;
     direction: rtl;
 }
+
+.mfp_background_ivory {
+    background-color: ivory;
+}
+
+.mfp_background_gainsboro {
+    background-color: gainsboro;
+}
+
+.mfp_background_sandybrown {
+    background-color: sandybrown;
+}

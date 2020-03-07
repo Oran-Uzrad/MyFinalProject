@@ -177,7 +177,7 @@ def bush():
     form1 = ExpandForm()
     form2 = CollapseForm()
     # df = pd.read_csv(path.join(path.dirname(__file__), 'static\\data\\trump.csv'))
-    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/bush.csv'))
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/bush.csv'), encoding = "utf-8")
     raw_data_table = ''
 
     if request.method == 'POST':

@@ -15,10 +15,15 @@ from wtforms.validators import DataRequired
 
 from MyFinalProject.Models.Forms import ExpandForm
 from MyFinalProject.Models.Forms import CollapseForm
+from MyFinalProject.Models.Forms import SinglePresidentForm
+from MyFinalProject.Models.plot_service_functions import plot_case_1
+from MyFinalProject.Models.general_service_functions import htmlspecialchars
 
-
+from wtforms.fields.html5 import DateField
 
 from os import path
+import io
+
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
 
@@ -81,6 +86,63 @@ def data():
         img_obama = '/static/imgs/obama.jpg',
         img_bush = '/static/imgs/bush.jpg',
         img_clinton = '/static/imgs/clinton.jpg'
+    )
+
+@app.route('/query' , methods = ['GET' , 'POST'])
+def query():
+
+    print("Query")
+
+    form1 = SinglePresidentForm()
+    #if form1.validate_on_submit():
+    # chart = '/static/imgs/question_mark.jpg'
+    chart = {}
+    height_case_1 = "100"
+    width_case_1 = "250"
+
+    # txt = open(path.join(path.dirname(__file__), 'static/txt/code_ex_1.txt'), 'r' , encoding="utf-8").read()
+    f = open(path.join(path.dirname(__file__), 'static/txt/code_ex_1.txt'), 'r' , encoding="utf-8")
+    # s = f.read()
+    lines = f.readlines()
+    print(type(lines))
+    for line in lines:
+        print(line)
+
+    # code_ex_1 = htmlspecialchars(txt)
+    df_trump = pd.read_csv(path.join(path.dirname(__file__), 'static/data/trump.csv'))
+    df_obama = pd.read_csv(path.join(path.dirname(__file__), 'static/data/obama.csv'))
+    df_bush = pd.read_csv(path.join(path.dirname(__file__), 'static/data/bush.csv'))
+    df_clinton = pd.read_csv(path.join(path.dirname(__file__), 'static/data/clinton.csv'))
+    presidents_dict = {'trump' : df_trump , 'obama' : df_obama , 'bush' : df_bush , 'clinton' : df_clinton }
+    if request.method == 'POST':
+        president = form1.president.data 
+        start_date = form1.start_date.data
+        end_date = form1.end_date.data
+        kind = form1.kind.data
+        height_case_1 = "300"
+        width_case_1 = "750"
+        print(president)
+        print(start_date)
+        print(end_date)
+        print(type(start_date))
+        x = str(start_date)
+        print(type(x))
+        print(x)
+        chart = plot_case_1(presidents_dict[president] , start_date , end_date , kind)
+
+    
+    return render_template(
+        'query.html',
+        img_trump = '/static/imgs/trump.jpg',
+        img_obama = '/static/imgs/obama.jpg',
+        img_bush = '/static/imgs/bush.jpg',
+        img_clinton = '/static/imgs/clinton.jpg',
+        img_under_construction = '/static/imgs/under_construction.png',
+        form1 = form1,
+        src_case_1 = chart,
+        height_case_1 = height_case_1 ,
+        width_case_1 = width_case_1 ,
+        code_ex_1 = '/static/imgs/code_ex_1.PNG'
     )
 
 @app.route('/project_resources')

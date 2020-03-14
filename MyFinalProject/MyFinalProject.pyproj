@@ -30,6 +30,12 @@
     <Compile Include="MyFinalProject\Models\Forms.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MyFinalProject\Models\general_service_functions.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MyFinalProject\Models\plot_service_functions.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="MyFinalProject\__init__.py" />
     <Compile Include="MyFinalProject\views.py" />
@@ -42,6 +48,7 @@
     <Folder Include="MyFinalProject\static\fonts\" />
     <Folder Include="MyFinalProject\static\data\" />
     <Folder Include="MyFinalProject\static\imgs\" />
+    <Folder Include="MyFinalProject\static\txt\" />
     <Folder Include="MyFinalProject\static\scripts\" />
     <Folder Include="MyFinalProject\templates\" />
   </ItemGroup>
@@ -53,16 +60,21 @@
     <Content Include="MyFinalProject\static\imgs\american_flag.jpg" />
     <Content Include="MyFinalProject\static\imgs\bush.jpg" />
     <Content Include="MyFinalProject\static\imgs\clinton.jpg" />
+    <Content Include="MyFinalProject\static\imgs\code_ex_1.PNG" />
     <Content Include="MyFinalProject\static\imgs\obama.jpg" />
     <Content Include="MyFinalProject\static\imgs\oran.jpg" />
+    <Content Include="MyFinalProject\static\imgs\question_mark.jpg" />
     <Content Include="MyFinalProject\static\imgs\tichonet.png" />
     <Content Include="MyFinalProject\static\imgs\trump.jpg" />
+    <Content Include="MyFinalProject\static\imgs\under_construction.png" />
+    <Content Include="MyFinalProject\static\txt\code_ex_1.txt" />
     <Content Include="MyFinalProject\templates\assignment_5130.html" />
     <Content Include="MyFinalProject\templates\bush.html" />
     <Content Include="MyFinalProject\templates\clinton.html" />
     <Content Include="MyFinalProject\templates\data.html" />
     <Content Include="MyFinalProject\templates\obama.html" />
     <Content Include="MyFinalProject\templates\project_resources.html" />
+    <Content Include="MyFinalProject\templates\query.html" />
     <Content Include="MyFinalProject\templates\tracking_changes.html" />
     <Content Include="MyFinalProject\templates\trump.html" />
     <Content Include="requirements.txt" />

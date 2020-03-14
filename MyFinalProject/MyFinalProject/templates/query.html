@@ -1,0 +1,286 @@
+﻿{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <img class="contain" src={{ img_under_construction }} alt='Missing' height=150 width=150>
+        <br /><br /><br />
+    </div>
+    <div class="col-md-4">
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mfp_p5">
+                    <img class="contain" src={{ img_trump }} alt='Missing'>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mfp_p5">
+                    <img class="contain" src={{ img_obama }} alt='Missing'>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mfp_p5">
+                    <img class="contain" src={{ img_bush }} alt='Missing'>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mfp_p5">
+                    <img class="contain" src={{ img_clinton }} alt='Missing'>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 heb converter-870">
+        <h2><font face="Tahoma, Geneva, sans-serif">דף השאילתות</font></h2>
+
+        <p><font face="Tahoma, Geneva, sans-serif">בדף הזה אאפשר שאילת שאילתות לגבי מדדי הפופולריות של הנשיאים וגם אראה איך מיישמים את טפסי השאילתות ואיך מייצרים את הגרפים הקשורים לתשובות</font></p>
+
+        <p><span style="color:#b22222"><strong><font face="Tahoma, Geneva, sans-serif">זהו החלק המשמעותי של הפרויקט הסופי.</font></strong></span></p>
+
+        <p><font face="Tahoma, Geneva, sans-serif">הדוגמאות כאן הן רק דוגמאות והן קשורות לנושא העבודה כאן, מדדי הפופולריות של ארבעה נשיאים. השאילתות בפרויקטים שלכם יכולות להיות שונות ומורכבות יותר.</font></p>
+    </div>
+</div>
+
+<hr />
+
+<div class="row heb converter-870">
+    <h2 dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">איפיון</span></h2>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">לפני שניישם את דף ה Query אנחנו צריכים לאפיין אותו. כלומר להגדיר לעצמינו מה אנחנו רוצים ליישם.</span></p>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">נלך שלב אחר שלב מהפשוט יותר למורכב יותר.</span></p>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">יש לנו ארבעה נשיאים:</span></p>
+
+    <ul dir="rtl">
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">דונאלד טראמפ - הנתונים לגביו&nbsp;הם לתקופה שבין ה- 23.1.2017 ל- 16.1.2017</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">ברק אובמה - הנתונים לגביו הם לתקופה שבין ה- 21.1.2009 ל- 17.1.2017</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">ג&#39;ורג&#39; בוש (הבן) - הנתונים לגביו הם לתקופה שבין ה- 1.2.2001 ל- 9.1.2009</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">ביל קלינטון - הנתונים לגביו הם לתקופה שבין ה- 24.1.1993 ל- 10.1.2001</span></li>
+    </ul>
+
+    <p dir="rtl">&nbsp;</p>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif"><span style="color:#b22222"><strong>שני דברים שכדאי לשים אליהם לב בהקשר לאיך שבניתי את הדף הזה</strong>:</span></span></p>
+
+    <p dir="rtl" style="margin-right: 40px;"><span style="font-family:Tahoma,Geneva,sans-serif">הסדרות והגרפים שאציג כאן הם מבוססי ציר זמן. כלומר האינדקסים שלהם הם Time Stamps. זה כך מפני שזהו אופי הדאטה שאני מנתח בעבודה הזו - מדדי הפופולריות של הנשיאים על ציר הזמן. מכאן שקוד הפייתון שמעבד את השאילתות ומציג את הגרפים, מתבסס על עבודה עם Time Stamps. זה לא חייב להיות במקרה שלכם ולכן צריך לחקור ולהבין אם ואיך הקוד שלי ישים למקרה שלכם ואיך משתמשים בו, אם בכלל.</span></p>
+
+    <p dir="rtl" style="margin-right: 40px;"><span style="font-family:Tahoma,Geneva,sans-serif">את ה- html שמאחורי הטקסט שאני כותב כאן אני עורך עם&nbsp;<strong><a href="https://4html.net/Online-HTML-Editor-Text-to-HTML-Converter-870.html">האתר הזה</a></strong>&nbsp;שתומך בעברית בצורה יפה ומייצר קוד html פשוט שאפשר להכניס לדפים שלנו בצורה פשוטה. כלומר כותבים בצורה חופשית כמו ב Word והאתר ממיר את הטקסט ל html שאותו מדביקים לדפים שלנו. מומלץ</span></p>
+
+    <p dir="rtl">&nbsp;</p>
+
+    <h3 dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">שלב 1:</span></h3>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">נרצה ליישם טופס הקולט את הנתונים הבאים:</span></p>
+
+    <ol dir="rtl">
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">שם הנשיא, אחד מארבעתם</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">תאריך התחלה</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">תאריך סיום</span></li>
+    </ol>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">​​​​​​​מילוי הטופס ושליחתו יציגו את גרף הפופולריות של הנשיא שנבחר בתקופה שצויינה.</span></p>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">אם התאריכים חורגים מתקופת הכהונה של הנשיא שנבחר, תצא הודעת שגיאה ולא יוצג גרף.</span></p>
+
+    <p dir="rtl">&nbsp;</p>
+
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-2 converter-870">
+        <p><span style="color:#b22222"><strong>Trump:</strong></span></p>
+
+        <p>1/23/17 - 1/16/20</p>
+
+        <p><span style="color:#b22222"><strong>Obama:</strong></span></p>
+
+        <p>1/21/09 - 1/17/17</p>
+
+        <p><span style="color:#b22222"><strong>Bush:</strong></span></p>
+
+        <p>1/2/01 - 1/9/2009</p>
+
+        <p><strong><span style="color:#b22222">Clinton:</span></strong></p>
+
+        <p>1/24/93 - 1/10/01</p>
+    </div>
+    <div class="col-md-2">
+        <form method="post">
+            {{ form1.csrf_token }}
+            {{ wtf.form_field(form1.president)}}
+            {{ wtf.form_field(form1.start_date)}}
+            {{ wtf.form_field(form1.end_date)}}
+            {{ wtf.form_field(form1.kind)}}
+            <input class="btn btn-primary" type="submit" value="הצג">
+        </form>
+    </div>
+    <div class="col-md-8">
+        {% if src_case_1 %}
+            {% if src_case_1.isempty %}
+                <p style="text-align: center;">&nbsp;</p>
+
+                <p style="text-align: center;">&nbsp;</p>
+
+                <p style="text-align: center;"><strong><span style="color:#ff0000"><font face="Tahoma, Geneva, sans-serif"><span style="font-size:16px">הסדרה המבוקשת ריקה!</span></font></span></strong></p>
+
+                <p style="text-align: center;"><span style="color:#ff0000"><font face="Tahoma, Geneva, sans-serif"><span style="font-size:16px">כנראה טעות בהקלדת התאריכים בטופס.</span></font></span></p>
+
+                <p style="text-align: center;">
+                    <span style="color:#ff0000">
+                        <font face="Tahoma, Geneva, sans-serif">
+                            <span style="font-size:16px">
+                                בידקו שהתאריכים מתאימים לתקופת הכהונה של הנשיא. בידקו שתאריך ההתחלה לא&nbsp;<br />
+                                מאוחר יותר מתאריך הסיום
+                            </span>
+                        </font>
+                    </span>
+                </p>
+
+                <p style="text-align: center;">&nbsp;</p>
+            {% else %}
+                <img src={{ src_case_1.img }} class="img-thumbnail" alt="not found" height={{height_case_1}} width={{ width_case_1}}>
+            {% endif %}
+        {% else %}
+            <p style="text-align: center;">&nbsp;</p>
+
+            <p style="text-align: center;">&nbsp;</p>
+
+            <p style="text-align: center;"><span style="color:#add8e6"><span style="font-size:16px"><span style="font-family:Tahoma,Geneva,sans-serif">כאן יופיע הגרף אחרי שתמלאו את הטופס ותלחצו על </span></span></span><span style="color:#0000ff"><strong><span style="font-size:16px"><span style="font-family:Tahoma,Geneva,sans-serif">הצג</span></span></strong></span><span style="color:#add8e6"><span style="font-size:16px"><span style="font-family:Tahoma,Geneva,sans-serif">.</span></span></span></p>
+
+            <p style="text-align: center;"><span style="color:#add8e6"><span style="font-size:16px"><font face="Tahoma, Geneva, sans-serif">כשבחרתם נשיא מסויים, וודאו שתאריך ההתחלה והסיום הם בתחום תקופת כהונתו. תקופות הכהונה של כל נשיא רשומות כאן משמאל.</font></span></span></p>
+
+            <p style="text-align: center;"><span style="color:#add8e6"><span style="font-size:16px"><font face="Tahoma, Geneva, sans-serif">אם התאריכים שנבחרו אינם תואמים את תקופת הכהונה, או אין עבורם דאטה, או תאריך ההתחלה הוא מאוחר יותר מתאריך הסיום, תצא הודעה מתאימה במקום גרף</font></span></span></p>
+
+            <p style="text-align: center;"><span style="color:#add8e6"><span style="font-size:16px"><font face="Tahoma, Geneva, sans-serif">הטופס נותן לכם לבחור איזה סוג גרף אתם רוצים</font></span></span></p>
+
+            <p style="text-align: center;">&nbsp;</p>
+        {% endif %}
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <h3 dir="rtl"><span style="color:#b22222"><span style="font-family:Tahoma,Geneva,sans-serif">אז איך בניתי את הדף הזה ואת השאילתא?</span></span></h3>
+
+    <p dir="rtl">&nbsp;</p>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">לפני שממשיכים, חשוב שתשחקו אם השאילתא למעלה כאן ותראו שהיא עומדת (או לא) באיפיון שהגדרנו לה. במיוחד הודעת השגיאה במקרה שהתאריכים לא נכונים, ההודעה המקורית בפנל הגרף כשהדף עולה וכו&#39;.</span></p>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">אסביר כאן, צעד אחר צעד איך הדף הזה נבנה ואת מרכיבי הקוד שמאחורי השאילתא.</span></p>
+
+    <p dir="rtl">&nbsp;</p>
+
+    <h4 dir="rtl"><span style="color:#b22222"><span style="font-family:Tahoma,Geneva,sans-serif">איפיון השאילתא</span></span></h4>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">איפיון השאילתא הוא הצעד הראשון. אי אפשר להתחיל ליישם בלעדיו. הוא חייב להיות מדוייק לחלוטין.</span></p>
+
+    <ul dir="rtl">
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">מהם שדות השאילתא</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">מהי צורת התשובה לשאילתא</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">מה קורה במקרה של שגיאה</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">מה קורה כשטוענים את הדף בפעם הראשונה</span></li>
+    </ul>
+
+    <p dir="rtl">&nbsp;</p>
+
+    <h4 dir="rtl"><span style="color:#b22222"><span style="font-family:Tahoma,Geneva,sans-serif">כמה שאילתות בדף אחד</span></span></h4>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">הדף כאן מציג שאילתא אחת. שאילתות תהיינה בנוייות על טפסים. יישום יותר מטופס אחד בדף דורש מורכבות גבוהה יותר שנמנעתי ממנה בשלב הזה.</span></p>
+
+    <p dir="rtl">&nbsp;</p>
+
+    <h4 dir="rtl"><span style="color:#b22222"><span style="font-family:Tahoma,Geneva,sans-serif">בניית דף ה Query</span></span></h4>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">לא אפרט כאן את הצעדים לבניית דף נוסף באתר שלנו והפנייה אליו מה מ navbar הראשי. עשינו את זה כבר מספר פעמים. בעיקרון זה לבנות Route לדף החדש ב views.py, לבנות דף html חדש ובסוף, כאמור, הפנייה לדף מה navbar ב-&nbsp;layout.html.&nbsp;לא מסובך</span></p>
+
+    <p dir="rtl">&nbsp;</p>
+
+    <h4 dir="rtl"><span style="color:#b22222"><span style="font-family:Tahoma,Geneva,sans-serif">כל הטקסט שמסביב</span></span></h4>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">אם תפתחו את קוד המקור של הדף הזה כדי ללמוד ממנו, תראו המון דברים אחרים. זה כל הטקסט שערכתי (כולל מה שאתם קוראים עכשיו) כפי שהסברתי למעלה. לצורך בניית הדף שלכם, תתעלמו מהטקסט הזה ותתרכזו במקום שבו ממומש הטופס.</span></p>
+
+    <p dir="rtl">&nbsp;</p>
+
+    <h4 dir="rtl"><span style="color:#b22222"><span style="font-family:Tahoma,Geneva,sans-serif">עבודה עם Grid של Bootstrap</span></span></h4>
+
+    <h4 dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">השלד של הדף הזה בנוי על תשתית Bootstrap-Grid. אתם מוזמנים לזהות את האלמנטים. מאוד מומלץ. זה עושה סדר.</span></h4>
+
+    <p dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">גם קטע הטופס בנוי על גריד. שורה אחת עם שלוש עמודות:</span></p>
+
+    <ul dir="rtl">
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">עמודה אחת שבה רשומים תאריכי הכהונה של כל נשיא - ברוחב 2</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">עמודה אחת לטופס עצמו - ברוחב 2</span></li>
+        <li><span style="font-family:Tahoma,Geneva,sans-serif">עמודה אחת לגרף או להודעות - ברוחב 8</span></li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <h4 dir="rtl"><span style="color:#b22222"><span style="font-family:Tahoma,Geneva,sans-serif">קוד ה html של איזור הטופס</span></span></h4>
+
+    <h4 dir="rtl"><span style="font-family:Tahoma,Geneva,sans-serif">אביא כאן את קוד ה html של איזור השאילתא ונסביר</span></h4>
+
+    <p dir="rtl"><span style="font-size:12px"><em><span style="font-family:Tahoma,Geneva,sans-serif">הקוד מובא כאן בצורה של תמונה. בגירסאות הבאות של האתר, אשים אותו כטקסט חי, מתנצל. בכל מקרה, אתם יכולים למצוא את קוד המקור בגיטהאב. כדי לא להעמיס, צמצמתי גם את שורות הקוד המדפיסות את ההודעה ההתחלתית ואת הודעת השגיאה. הן נוצרו בעזרת Converter-870 ולכן הן עמוסות תגיות html שמקשות על ההבנה.</span></em></span></p>
+
+    <p dir="rtl">&nbsp;</p>
+</div>
+
+<div class="row chart_groove">
+
+    <img class="contain" src={{ code_ex_1 }} alt='Missing'>
+
+</div>
+
+<div class="row">
+
+    <h3 dir="rtl">&nbsp;</h3>
+
+    <p dir="rtl"><font face="Tahoma, Geneva, sans-serif">כאמור קטע הטופס (שורת ה Grid) מחולקת לשלושה חלקים. אנחנו רואים את ה div של השורה בשורה 1 בקוד ואת שלושת העמודות בשורות 2, 5 ו- 15.</font></p>
+
+    <p dir="rtl"><font face="Tahoma, Geneva, sans-serif">אין מה לפרט לגבי החלק השמאלי, רשימה סטטית של תקופות הכהונה לעזרת המשתמש.</font></p>
+
+    <p dir="rtl"><font face="Tahoma, Geneva, sans-serif">העמודה האמצעית היא הטופס עצמו. אנחנו משתמשים ב Flask-Bootstrap-wtf ולכן בראש קובץ ה html נכניס את השורה:</font></p>
+
+    <p dir="rtl" style="text-align: left;"><span style="font-family:Courier New,Courier,monospace">{%raw%}{% import &quot;bootstrap/wtf.html&quot; as wtf %}{%endraw%}</span></p>
+
+    <p dir="rtl"><font face="Tahoma, Geneva, sans-serif">הטופב עצמו מוגדר במרחב ה Python בקובץ Forms.py&nbsp; והוא נראה כך:</font></p>
+
+    <p dir="ltr">
+        <span style="font-size:11px">
+            <span style="font-family:Courier New,Courier,monospace">
+                class SinglePresidentForm(FlaskForm):<br />
+                &nbsp; &nbsp; president = SelectField(&#39;President&#39; , validators = [DataRequired] , choices=[(&#39;trump&#39;, &#39;Trump&#39;), (&#39;obama&#39;, &#39;Obama&#39;), (&#39;bush&#39;, &#39;Bush&#39;) , (&#39;clinton&#39;, &#39;Clinton&#39;)])<br />
+                &nbsp; &nbsp; start_date = DateField(&#39;Start Date&#39; , format=&#39;%Y-%m-%d&#39; , validators = [DataRequired])<br />
+                &nbsp; &nbsp; end_date = DateField(&#39;End Date&#39; , format=&#39;%Y-%m-%d&#39; , validators = [DataRequired])<br />
+                &nbsp; &nbsp; kind = SelectField(&#39;Chart Kind&#39; , validators = [DataRequired] , choices=[(&#39;line&#39;, &#39;line&#39;), (&#39;bar&#39;, &#39;bar&#39;)])<br />
+                &nbsp; &nbsp; subnmit = SubmitField(&#39;הצג&#39;)
+            </span>
+        </span>
+    </p>
+
+    <p dir="rtl">חגדג</p>
+
+</div>
+
+
+
+    {% endblock %}

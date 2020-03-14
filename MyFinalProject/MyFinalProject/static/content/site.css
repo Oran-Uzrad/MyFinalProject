@@ -68,7 +68,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .heb {
-    font-family: Tahoma, Geneva, sans-serif;
+    # font-family: Tahoma, Geneva, sans-serif;
     direction: rtl;
 }
 
@@ -82,4 +82,24 @@ input[type="checkbox"].input-validation-error {
 
 .mfp_background_sandybrown {
     background-color: sandybrown;
+}
+
+.mfp_p5 {
+    padding: 3px;
+}
+
+.chart_groove {
+    border-style: groove;
+}
+
+.converter-870 {
+    background-color: #f0f0f5;
+}
+
+.textarea_oran {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: Courier New, Courier, monospace;
 }

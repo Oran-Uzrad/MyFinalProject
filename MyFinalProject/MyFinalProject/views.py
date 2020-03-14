@@ -94,26 +94,16 @@ def query():
     print("Query")
 
     form1 = SinglePresidentForm()
-    #if form1.validate_on_submit():
-    # chart = '/static/imgs/question_mark.jpg'
     chart = {}
     height_case_1 = "100"
     width_case_1 = "250"
 
-    # txt = open(path.join(path.dirname(__file__), 'static/txt/code_ex_1.txt'), 'r' , encoding="utf-8").read()
-    f = open(path.join(path.dirname(__file__), 'static/txt/code_ex_1.txt'), 'r' , encoding="utf-8")
-    # s = f.read()
-    lines = f.readlines()
-    print(type(lines))
-    for line in lines:
-        print(line)
-
-    # code_ex_1 = htmlspecialchars(txt)
     df_trump = pd.read_csv(path.join(path.dirname(__file__), 'static/data/trump.csv'))
     df_obama = pd.read_csv(path.join(path.dirname(__file__), 'static/data/obama.csv'))
     df_bush = pd.read_csv(path.join(path.dirname(__file__), 'static/data/bush.csv'))
     df_clinton = pd.read_csv(path.join(path.dirname(__file__), 'static/data/clinton.csv'))
     presidents_dict = {'trump' : df_trump , 'obama' : df_obama , 'bush' : df_bush , 'clinton' : df_clinton }
+
     if request.method == 'POST':
         president = form1.president.data 
         start_date = form1.start_date.data
@@ -121,12 +111,12 @@ def query():
         kind = form1.kind.data
         height_case_1 = "300"
         width_case_1 = "750"
+
         print(president)
         print(start_date)
         print(end_date)
         print(type(start_date))
         x = str(start_date)
-        print(type(x))
         print(x)
         chart = plot_case_1(presidents_dict[president] , start_date , end_date , kind)
 

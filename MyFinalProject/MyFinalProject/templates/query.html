@@ -260,24 +260,15 @@
 
     <p dir="rtl"><font face="Tahoma, Geneva, sans-serif">העמודה האמצעית היא הטופס עצמו. אנחנו משתמשים ב Flask-Bootstrap-wtf ולכן בראש קובץ ה html נכניס את השורה:</font></p>
 
-    <p dir="rtl" style="text-align: left;"><span style="font-family:Courier New,Courier,monospace">{%raw%}{% import &quot;bootstrap/wtf.html&quot; as wtf %}{%endraw%}</span></p>
+    <p dir="rtl" style="text-align: left;"><span style="font-family:Courier New,Courier,monospace">{% raw %}{% import &quot;bootstrap/wtf.html&quot; as wtf %}{% endraw %}</span></p>
 
-    <p dir="rtl"><font face="Tahoma, Geneva, sans-serif">הטופב עצמו מוגדר במרחב ה Python בקובץ Forms.py&nbsp; והוא נראה כך:</font></p>
+    <p dir="rtl"><font face="Tahoma, Geneva, sans-serif">הטופס&nbsp;עצמו מוגדר במרחב ה Python בקובץ Forms.py&nbsp; ונגיע אליו מאוחר יותר.</font></p>
 
-    <p dir="ltr">
-        <span style="font-size:11px">
-            <span style="font-family:Courier New,Courier,monospace">
-                class SinglePresidentForm(FlaskForm):<br />
-                &nbsp; &nbsp; president = SelectField(&#39;President&#39; , validators = [DataRequired] , choices=[(&#39;trump&#39;, &#39;Trump&#39;), (&#39;obama&#39;, &#39;Obama&#39;), (&#39;bush&#39;, &#39;Bush&#39;) , (&#39;clinton&#39;, &#39;Clinton&#39;)])<br />
-                &nbsp; &nbsp; start_date = DateField(&#39;Start Date&#39; , format=&#39;%Y-%m-%d&#39; , validators = [DataRequired])<br />
-                &nbsp; &nbsp; end_date = DateField(&#39;End Date&#39; , format=&#39;%Y-%m-%d&#39; , validators = [DataRequired])<br />
-                &nbsp; &nbsp; kind = SelectField(&#39;Chart Kind&#39; , validators = [DataRequired] , choices=[(&#39;line&#39;, &#39;line&#39;), (&#39;bar&#39;, &#39;bar&#39;)])<br />
-                &nbsp; &nbsp; subnmit = SubmitField(&#39;הצג&#39;)
-            </span>
-        </span>
-    </p>
+    <p dir="rtl"><font face="Tahoma, Geneva, sans-serif">העמודה השלישית הימנית, כוללת את המקום שבו יוצג הגרף והיא מעניינת. יש בה קוד jinja2 שבודק מה מגיע ממרחב הפייתון (מ- views.py) ומחליט מה יוצג בה.</font></p>
 
-    <p dir="rtl">חגדג</p>
+    <p dir="rtl"><font face="Tahoma, Geneva, sans-serif">הבדיקה הראשונה בשורה 16 היא האם בכלל מועבר משהו. כלומר האם המשתנה src_case_1 הוא לא מחרוזת ריקה. אם הוא מחרוזת ריקה נקפוץ לחלק ה else שבשורה 22. במקרה הזה תוצג ההודעה ההתחלתית. זו המקרה שבו הגישה לדף ה query היא מסוג GET, כלומר הורדה ראשונה של הדף, ולא שליחת הטופס.</font></p>
+
+    <p dir="rtl">&nbsp;</p>
 
 </div>
 

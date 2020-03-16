@@ -73,6 +73,7 @@
     <Content Include="MyFinalProject\templates\bush.html" />
     <Content Include="MyFinalProject\templates\clinton.html" />
     <Content Include="MyFinalProject\templates\data.html" />
+    <Content Include="MyFinalProject\templates\forms_demo.html" />
     <Content Include="MyFinalProject\templates\obama.html" />
     <Content Include="MyFinalProject\templates\project_resources.html" />
     <Content Include="MyFinalProject\templates\query.html" />

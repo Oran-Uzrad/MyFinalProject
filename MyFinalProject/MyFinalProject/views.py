@@ -16,10 +16,11 @@ from wtforms.validators import DataRequired
 from MyFinalProject.Models.Forms import ExpandForm
 from MyFinalProject.Models.Forms import CollapseForm
 from MyFinalProject.Models.Forms import SinglePresidentForm
+from MyFinalProject.Models.Forms import AllOfTheAboveForm
 from MyFinalProject.Models.plot_service_functions import plot_case_1
 from MyFinalProject.Models.general_service_functions import htmlspecialchars
 
-from wtforms.fields.html5 import DateField
+from wtforms.fields.html5 import DateField , DateTimeField
 
 from os import path
 import io
@@ -133,6 +134,58 @@ def query():
         height_case_1 = height_case_1 ,
         width_case_1 = width_case_1 ,
         code_ex_1 = '/static/imgs/code_ex_1.PNG'
+    )
+
+@app.route('/forms_demo' , methods = ['GET' , 'POST'])
+def forms_demo():
+
+    print("Dorms Demo")
+
+    form1 = AllOfTheAboveForm()
+    
+
+    if request.method == 'POST':
+        s1 = form1.string_field_entry.data
+        s2 = form1.text_area_field_entry.data
+        s3 = form1.password_field_entry.data
+        s4 = form1.date_field_entry.data
+        print( type(form1.date_field_entry.data))
+        s5 = form1.integer_field_entry.data
+        s6 = form1.decimal_field_entry.data
+        s7 = form1.boolean_field_entry.data
+        s8 = form1.radio_field_entry.data
+        s9 = form1.select_field_entry.data
+        s10 = form1.select_field_multiple_entry.data
+        
+    else:
+        s1 = 'GET Request'
+        s2 = 'GET Request'
+        s3 = 'GET Request'
+        s4 = 'GET Request'
+        s4 = 'GET Request'
+        s5 = 'GET Request'
+        s6 = 'GET Request'
+        s7 = 'GET Request'
+        s8 = 'GET Request'
+        s9 = 'GET Request'
+        s10 = 'GET Request'
+        
+
+    
+    return render_template(
+        'forms_demo.html',
+        form1 = form1,
+        
+        s1 = s1 ,
+        s2 = s2 ,
+        s3 = s3 ,
+        s4 = s4 ,
+        s5 = s5 , 
+        s6 = s6 ,
+        s7 = s7 ,
+        s8 = s8 , 
+        s9 = s9 ,
+        s10 = s10 
     )
 
 @app.route('/project_resources')

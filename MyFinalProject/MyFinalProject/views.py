@@ -139,7 +139,7 @@ def query():
 @app.route('/forms_demo' , methods = ['GET' , 'POST'])
 def forms_demo():
 
-    print("Dorms Demo")
+    print("Forms Demo")
 
     form1 = AllOfTheAboveForm()
     
@@ -149,13 +149,23 @@ def forms_demo():
         s2 = form1.text_area_field_entry.data
         s3 = form1.password_field_entry.data
         s4 = form1.date_field_entry.data
-        print( type(form1.date_field_entry.data))
         s5 = form1.integer_field_entry.data
         s6 = form1.decimal_field_entry.data
         s7 = form1.boolean_field_entry.data
         s8 = form1.radio_field_entry.data
         s9 = form1.select_field_entry.data
         s10 = form1.select_field_multiple_entry.data
+
+        t1 = str(type(s1))
+        t2 = str(type(s2))
+        t3 = str(type(s3))
+        t4 = str(type(s4))
+        t5 = str(type(s5))
+        t6 = str(type(s6))
+        t7 = str(type(s7))
+        t8 = str(type(s8))
+        t9 = str(type(s9))
+        t10 = str(type(s10))
         
     else:
         s1 = 'GET Request'
@@ -169,6 +179,18 @@ def forms_demo():
         s8 = 'GET Request'
         s9 = 'GET Request'
         s10 = 'GET Request'
+
+        t1 = ''
+        t2 = ''
+        t3 = ''
+        t4 = ''
+        t5 = ''
+        t6 = ''
+        t7 = ''
+        t8 = ''
+        t9 = ''
+        t10 = ''
+      
         
 
     
@@ -185,7 +207,18 @@ def forms_demo():
         s7 = s7 ,
         s8 = s8 , 
         s9 = s9 ,
-        s10 = s10 
+        s10 = s10 , 
+
+        t1 = t1 ,
+        t2 = t2 ,
+        t3 = t3 ,
+        t4 = t4 ,
+        t5 = t5 ,
+        t6 = t6 ,
+        t7 = t7 ,
+        t8 = t8 ,
+        t9 = t9 ,
+        t10 = t10
     )
 
 @app.route('/project_resources')

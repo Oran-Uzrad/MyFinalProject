@@ -68,7 +68,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .heb {
-    # font-family: Tahoma, Geneva, sans-serif;
+    font-family: Tahoma, Geneva, sans-serif;
     direction: rtl;
 }
 

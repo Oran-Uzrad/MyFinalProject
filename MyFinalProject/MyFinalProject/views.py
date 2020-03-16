@@ -294,7 +294,19 @@ def assignment_5130():
     print("5130")
 
     return render_template(
-        'assignment_5130.html'
+        'assignment_5130.html',
+
+    )
+
+@app.route('/status')
+def status():
+
+    print("status")
+
+    st = open(path.join(path.dirname(__file__), 'static/data/status.txt') , 'r' , encoding = 'utf-8').read()
+
+    return render_template(
+        'status.html'
     )
 
 @app.route('/tracking_changes')

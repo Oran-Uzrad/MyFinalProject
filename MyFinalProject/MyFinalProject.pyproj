@@ -57,6 +57,7 @@
     <Content Include="MyFinalProject\static\data\clinton.csv" />
     <Content Include="MyFinalProject\static\data\obama.csv" />
     <Content Include="MyFinalProject\static\data\status.txt" />
+    <Content Include="MyFinalProject\static\data\time_series_2019-ncov-Confirmed.csv" />
     <Content Include="MyFinalProject\static\data\trump.csv" />
     <Content Include="MyFinalProject\static\imgs\american_flag.jpg" />
     <Content Include="MyFinalProject\static\imgs\bush.jpg" />
@@ -75,6 +76,7 @@
     <Content Include="MyFinalProject\templates\data.html" />
     <Content Include="MyFinalProject\templates\forms_demo.html" />
     <Content Include="MyFinalProject\templates\obama.html" />
+    <Content Include="MyFinalProject\templates\plot_demo.html" />
     <Content Include="MyFinalProject\templates\project_resources.html" />
     <Content Include="MyFinalProject\templates\query.html" />
     <Content Include="MyFinalProject\templates\status.html" />

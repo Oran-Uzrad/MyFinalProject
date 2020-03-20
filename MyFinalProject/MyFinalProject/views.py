@@ -18,12 +18,16 @@ from MyFinalProject.Models.Forms import CollapseForm
 from MyFinalProject.Models.Forms import SinglePresidentForm
 from MyFinalProject.Models.Forms import AllOfTheAboveForm
 from MyFinalProject.Models.plot_service_functions import plot_case_1
+from MyFinalProject.Models.plot_service_functions import plot_to_img
 from MyFinalProject.Models.general_service_functions import htmlspecialchars
 
 from wtforms.fields.html5 import DateField , DateTimeField
 
 from os import path
 import io
+
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
 
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
@@ -219,6 +223,34 @@ def forms_demo():
         t8 = t8 ,
         t9 = t9 ,
         t10 = t10
+    )
+
+@app.route('/plot_demo' , methods = ['GET' , 'POST'])
+def plot_demo():
+
+    print("Plot Demo")
+
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_2019-ncov-Confirmed.csv'))
+    df = df.drop(['Lat' , 'Long' , 'Province/State'], 1)
+    df = df.rename(columns={'Country/Region': 'Country'})
+    df = df.groupby('Country').sum()
+    df = df.loc[['Israel' , 'France' , 'Italy' , 'Spain' , 'United Kingdom']]
+    df = df.transpose()
+    df = df.reset_index()
+    df = df.drop(['index'], 1)
+    df = df.tail(30)
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.plot(ax = ax , kind = 'line')
+    chart = plot_to_img(fig)
+    
+    return render_template(
+        'plot_demo.html',
+        img_under_construction = '/static/imgs/under_construction.png',
+        chart = chart ,
+        height = "300" ,
+        width = "750"
     )
 
 @app.route('/project_resources')

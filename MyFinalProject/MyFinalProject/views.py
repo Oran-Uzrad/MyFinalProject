@@ -17,8 +17,11 @@ from MyFinalProject.Models.Forms import ExpandForm
 from MyFinalProject.Models.Forms import CollapseForm
 from MyFinalProject.Models.Forms import SinglePresidentForm
 from MyFinalProject.Models.Forms import AllOfTheAboveForm
+from MyFinalProject.Models.Forms import Covid19DayRatio
 from MyFinalProject.Models.plot_service_functions import plot_case_1
 from MyFinalProject.Models.plot_service_functions import plot_to_img
+from MyFinalProject.Models.plot_service_functions import covid19_day_ratio
+from MyFinalProject.Models.plot_service_functions import get_countries_choices
 from MyFinalProject.Models.general_service_functions import htmlspecialchars
 
 from wtforms.fields.html5 import DateField , DateTimeField
@@ -138,6 +141,61 @@ def query():
         height_case_1 = height_case_1 ,
         width_case_1 = width_case_1 ,
         code_ex_1 = '/static/imgs/code_ex_1.PNG'
+    )
+
+@app.route('/covid19' , methods = ['GET' , 'POST'])
+def covid19():
+
+    print("Covid19")
+
+    form1 = Covid19DayRatio()
+    chart_confirmed = '/static/imgs/covid19-world.png'
+    chart_deaths = '/static/imgs/covid19-world.png'
+    chart_recovered = '/static/imgs/covid19-world.png'
+    height_case_1 = "100"
+    width_case_1 = "250"
+
+    df_confirmed = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_2019-ncov-Confirmed.csv'))
+    df_deaths = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_2019-ncov-Deaths.csv'))
+    df_recovered = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_2019-ncov-Recovered.csv'))
+
+    country_choices = get_countries_choices(df_confirmed)
+    form1.countries.choices = country_choices       # Taken from: https://stackoverflow.com/questions/46921823/dynamic-choices-wtforms-flask-selectfield
+   
+    
+
+    if request.method == 'POST':
+        countries = form1.countries.data 
+        start_date = form1.start_date.data
+        end_date = form1.end_date.data
+        
+        df_tmp = covid19_day_ratio(df_confirmed , countries , start_date , end_date)
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        df_tmp.plot(ax = ax , kind = 'line', figsize = (24, 6) , fontsize = 22 , grid = True)
+        chart_confirmed = plot_to_img(fig)
+
+        df_tmp = covid19_day_ratio(df_deaths , countries , start_date , end_date)
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        df_tmp.plot(ax = ax , kind = 'line' , figsize = (24, 6) , fontsize = 22 , grid = True)
+        chart_deaths = plot_to_img(fig)
+
+        df_tmp = covid19_day_ratio(df_recovered , countries , start_date , end_date)
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        df_tmp.plot(ax = ax , kind = 'line' , figsize = (24, 6) , fontsize = 22 , grid = True)
+        chart_recovered = plot_to_img(fig)
+
+    
+    return render_template(
+        'covid19.html',
+        img_under_construction = '/static/imgs/under_construction.png',
+        form1 = form1,
+        chart_confirmed = chart_confirmed,
+        chart_deaths = chart_deaths,
+        chart_recovered = chart_recovered
+        
     )
 
 @app.route('/forms_demo' , methods = ['GET' , 'POST'])

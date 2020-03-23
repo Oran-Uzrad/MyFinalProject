@@ -58,11 +58,14 @@
     <Content Include="MyFinalProject\static\data\obama.csv" />
     <Content Include="MyFinalProject\static\data\status.txt" />
     <Content Include="MyFinalProject\static\data\time_series_2019-ncov-Confirmed.csv" />
+    <Content Include="MyFinalProject\static\data\time_series_2019-ncov-Deaths.csv" />
+    <Content Include="MyFinalProject\static\data\time_series_2019-ncov-Recovered.csv" />
     <Content Include="MyFinalProject\static\data\trump.csv" />
     <Content Include="MyFinalProject\static\imgs\american_flag.jpg" />
     <Content Include="MyFinalProject\static\imgs\bush.jpg" />
     <Content Include="MyFinalProject\static\imgs\clinton.jpg" />
     <Content Include="MyFinalProject\static\imgs\code_ex_1.PNG" />
+    <Content Include="MyFinalProject\static\imgs\covid19-world.png" />
     <Content Include="MyFinalProject\static\imgs\obama.jpg" />
     <Content Include="MyFinalProject\static\imgs\oran.jpg" />
     <Content Include="MyFinalProject\static\imgs\question_mark.jpg" />
@@ -73,6 +76,7 @@
     <Content Include="MyFinalProject\templates\assignment_5130.html" />
     <Content Include="MyFinalProject\templates\bush.html" />
     <Content Include="MyFinalProject\templates\clinton.html" />
+    <Content Include="MyFinalProject\templates\covid19.html" />
     <Content Include="MyFinalProject\templates\data.html" />
     <Content Include="MyFinalProject\templates\forms_demo.html" />
     <Content Include="MyFinalProject\templates\obama.html" />

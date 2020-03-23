@@ -46,6 +46,8 @@ class AllOfTheAboveForm(FlaskForm):
     subnmit = SubmitField('submit')
 
 
-class Covid19(FlaskForm):
-    select_field_multiple_entry = SelectMultipleField('Select Multiple:' , validators = [DataRequired] , choices=[('trump', 'Trump'), ('obama', 'Obama'), ('bush', 'Bush') , ('clinton', 'Clinton')])
+class Covid19DayRatio(FlaskForm):
+    countries = SelectMultipleField('Select Multiple:' , validators = [DataRequired] )
+    start_date = DateField('Start Date (1/22/20 onwards):' , format='%Y-%m-%d' , validators = [DataRequired])
+    end_date = DateField('Start Date (Yesterday backwards):' , format='%Y-%m-%d' , validators = [DataRequired])
     subnmit = SubmitField('submit')

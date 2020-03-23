@@ -35,9 +35,34 @@ def plot_case_1(df , start_date , end_date , kind):
     return rd
 
 
+
+
 def plot_to_img(fig):
     pngImage = io.BytesIO()
     FigureCanvas(fig).print_png(pngImage)
     pngImageB64String = "data:image/png;base64,"
     pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
     return pngImageB64String
+
+def covid19_day_ratio(df , countries , start_date , end_date):
+    df1 = df.drop(['Lat' , 'Long' , 'Province/State'], 1)
+    df1 = df1.rename(columns={'Country/Region': 'Country'})
+    df1 = df1.groupby('Country').sum()
+    df1 = df1.loc[ countries ]
+    df1 = df1.transpose()
+    df1.index = pd.to_datetime(df1.index)
+    columns = list(df1)
+    df2 = df1
+    for col in columns:
+        df2[col] = df1[col] / df1[col].shift(1)
+    df2 = df2.replace([np.inf, -np.inf], np.nan)
+    df2 = df2.fillna(value=0)
+    df2 = df2[start_date : end_date]
+    return df2
+
+def get_countries_choices(df):
+    df1 = df.rename(columns={'Country/Region': 'Country'})
+    df1 = df1.groupby('Country').sum()
+    l = df1.index
+    m = list(zip(l , l))
+    return m

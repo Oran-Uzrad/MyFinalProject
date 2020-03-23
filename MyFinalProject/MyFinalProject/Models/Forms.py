@@ -51,3 +51,7 @@ class Covid19DayRatio(FlaskForm):
     start_date = DateField('Start Date (1/22/20 onwards):' , format='%Y-%m-%d' , validators = [DataRequired])
     end_date = DateField('Start Date (Yesterday backwards):' , format='%Y-%m-%d' , validators = [DataRequired])
     subnmit = SubmitField('submit')
+
+class OlympicMedals(FlaskForm):
+    country = SelectField('Select a Country:' , validators = [DataRequired] )
+    subnmit = SubmitField('submit')

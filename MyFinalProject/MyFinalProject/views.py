@@ -18,6 +18,7 @@ from MyFinalProject.Models.Forms import CollapseForm
 from MyFinalProject.Models.Forms import SinglePresidentForm
 from MyFinalProject.Models.Forms import AllOfTheAboveForm
 from MyFinalProject.Models.Forms import Covid19DayRatio
+from MyFinalProject.Models.Forms import OlympicMedals
 from MyFinalProject.Models.plot_service_functions import plot_case_1
 from MyFinalProject.Models.plot_service_functions import plot_to_img
 from MyFinalProject.Models.plot_service_functions import covid19_day_ratio
@@ -196,6 +197,40 @@ def covid19():
         chart_deaths = chart_deaths,
         chart_recovered = chart_recovered
         
+    )
+
+@app.route('/olympic-medals' , methods = ['GET' , 'POST'])
+def olympic_medals():
+
+    print("Olympic Medals")
+
+    form1 = OlympicMedals()
+    # chart = '/static/imgs/olympic.png'
+    chart = {}
+   
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/olimpic-medal.csv'))
+    country_choices = list(set(df['Country']))
+    clean_country_choices = [x for x in country_choices if x == x]
+    m = list(zip(clean_country_choices , clean_country_choices))
+    print(m)
+    form1.country.choices = m 
+
+
+    if request.method == 'POST':
+        country = form1.country.data
+        df1 = df.loc[df['Country'] == country]
+        s = df1.groupby('Discipline').size().sort_values(ascending=False)
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        s.plot(ax = ax , kind = 'bar', figsize = (24, 8) , fontsize = 22 , grid = True)
+        chart = plot_to_img(fig)
+
+    
+    return render_template(
+        'olympic.html',
+        img_under_construction = '/static/imgs/under_construction.png',
+        form1 = form1,
+        chart = chart
     )
 
 @app.route('/forms_demo' , methods = ['GET' , 'POST'])

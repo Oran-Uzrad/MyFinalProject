@@ -205,8 +205,8 @@ def olympic_medals():
     print("Olympic Medals")
 
     form1 = OlympicMedals()
-    # chart = '/static/imgs/olympic.png'
-    chart = {}
+    chart = '/static/imgs/olympic.png'
+
    
     df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/olimpic-medal.csv'))
     country_choices = list(set(df['Country']))

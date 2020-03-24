@@ -212,7 +212,6 @@ def olympic_medals():
     country_choices = list(set(df['Country']))
     clean_country_choices = [x for x in country_choices if x == x]
     m = list(zip(clean_country_choices , clean_country_choices))
-    print(m)
     form1.country.choices = m 
 
 

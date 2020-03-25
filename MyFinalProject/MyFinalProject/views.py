@@ -49,7 +49,7 @@ def home():
     
     return render_template(
         'index.html',
-        title='Home Page',
+        title='',
         img_american_flag = '/static/imgs/american_flag.jpg',
         year=datetime.now().year
     )
@@ -156,8 +156,8 @@ def covid19():
     height_case_1 = "100"
     width_case_1 = "250"
 
-    df_confirmed = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_2019-ncov-Confirmed.csv'))
-    df_deaths = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_2019-ncov-Deaths.csv'))
+    df_confirmed = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_covid19_confirmed_global.csv'))
+    df_deaths = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_covid19_deaths_global.csv'))
     df_recovered = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_2019-ncov-Recovered.csv'))
 
     country_choices = get_countries_choices(df_confirmed)

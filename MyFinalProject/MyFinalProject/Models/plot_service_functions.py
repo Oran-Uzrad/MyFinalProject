@@ -52,13 +52,21 @@ def covid19_day_ratio(df , countries , start_date , end_date):
     df1 = df1.transpose()
     df1.index = pd.to_datetime(df1.index)
     columns = list(df1)
-    df2 = df1
+    df_new = pd.DataFrame()
+    l = df1.index.tolist()
+    df_new['Dates'] = l
     for col in columns:
-        df2[col] = df1[col] / df1[col].shift(1)
-    df2 = df2.replace([np.inf, -np.inf], np.nan)
-    df2 = df2.fillna(value=0)
-    df2 = df2[start_date : end_date]
-    return df2
+        df1['S1'] = df1[col].shift(1)
+        df1['S2'] = df1[col].shift(2)
+        df1['D1'] = df1[col] - df1['S1']
+        df1['D2'] = df1['S1'] - df1['S2']
+        df1['R'] = df1['D1'] / df1['D2']
+        df_new[col] = list(df1['R'])
+    df_new = df_new.replace([np.inf, -np.inf], np.nan)
+    df_new = df_new.fillna(value=0)
+    df_new = df_new.set_index('Dates')
+    df_new = df_new[start_date : end_date]
+    return df_new
 
 def get_countries_choices(df):
     df1 = df.rename(columns={'Country/Region': 'Country'})

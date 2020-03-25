@@ -58,9 +58,9 @@
     <Content Include="MyFinalProject\static\data\obama.csv" />
     <Content Include="MyFinalProject\static\data\olimpic-medal.csv" />
     <Content Include="MyFinalProject\static\data\status.txt" />
-    <Content Include="MyFinalProject\static\data\time_series_2019-ncov-Confirmed.csv" />
-    <Content Include="MyFinalProject\static\data\time_series_2019-ncov-Deaths.csv" />
     <Content Include="MyFinalProject\static\data\time_series_2019-ncov-Recovered.csv" />
+    <Content Include="MyFinalProject\static\data\time_series_covid19_confirmed_global.csv" />
+    <Content Include="MyFinalProject\static\data\time_series_covid19_deaths_global.csv" />
     <Content Include="MyFinalProject\static\data\trump.csv" />
     <Content Include="MyFinalProject\static\imgs\american_flag.jpg" />
     <Content Include="MyFinalProject\static\imgs\bush.jpg" />

@@ -271,7 +271,7 @@ def yomlayla():
         new_df = new_df.set_index('HODESH')
         fig1 = plt.figure()
         ax = fig1.add_subplot(111)
-        new_df.plot(kind='bar',stacked=True)
+        new_df.plot(ax = ax , kind='bar',stacked=True)
         chart = plot_to_img(fig1)
 
     
@@ -372,7 +372,7 @@ def plot_demo():
 
     print("Plot Demo")
 
-    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_2019-ncov-Confirmed.csv'))
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_covid19_confirmed_global.csv'))
     df = df.drop(['Lat' , 'Long' , 'Province/State'], 1)
     df = df.rename(columns={'Country/Region': 'Country'})
     df = df.groupby('Country').sum()

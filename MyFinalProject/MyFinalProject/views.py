@@ -19,6 +19,7 @@ from MyFinalProject.Models.Forms import SinglePresidentForm
 from MyFinalProject.Models.Forms import AllOfTheAboveForm
 from MyFinalProject.Models.Forms import Covid19DayRatio
 from MyFinalProject.Models.Forms import OlympicMedals
+from MyFinalProject.Models.Forms import YomLayla
 from MyFinalProject.Models.plot_service_functions import plot_case_1
 from MyFinalProject.Models.plot_service_functions import plot_to_img
 from MyFinalProject.Models.plot_service_functions import covid19_day_ratio
@@ -231,6 +232,51 @@ def olympic_medals():
     
     return render_template(
         'olympic.html',
+        img_under_construction = '/static/imgs/under_construction.png',
+        form1 = form1,
+        chart = chart
+    )
+
+@app.route('/yomlayla' , methods = ['GET' , 'POST'])
+def yomlayla():
+
+    print("Yom Layla")
+
+    form1 = YomLayla()
+    chart = ''
+
+   
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/accdatwebsite.csv'))
+
+
+    if request.method == 'POST':
+        yl = int(form1.yl.data)
+
+
+        df = df[['HODESH_TEUNA','YOM_LAYLA','SUG_TEUNA']]
+        df = df.loc[(df['YOM_LAYLA'] == yl)]
+        new_df = pd.DataFrame()
+        hodesh_list = list(set(df['HODESH_TEUNA']))
+        new_df['HODESH'] = hodesh_list
+        sug_list = list(set(df['SUG_TEUNA']))
+        for sug in sug_list:
+            df_tmp = df.loc[(df['SUG_TEUNA'] == sug)]
+            s = df_tmp.groupby('HODESH_TEUNA').size()
+            for i in range(1,13):
+                if not i in s.index:
+                    s[i] = 0
+            s = s.sort_index()
+            l = list(s)
+            new_df[str(sug)] = l
+        new_df = new_df.set_index('HODESH')
+        fig1 = plt.figure()
+        ax = fig1.add_subplot(111)
+        new_df.plot(kind='bar',stacked=True)
+        chart = plot_to_img(fig1)
+
+    
+    return render_template(
+        'yomlayla.html',
         img_under_construction = '/static/imgs/under_construction.png',
         form1 = form1,
         chart = chart

@@ -53,6 +53,7 @@
     <Folder Include="MyFinalProject\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MyFinalProject\static\data\accdatwebsite.csv" />
     <Content Include="MyFinalProject\static\data\bush.csv" />
     <Content Include="MyFinalProject\static\data\clinton.csv" />
     <Content Include="MyFinalProject\static\data\obama.csv" />
@@ -89,6 +90,7 @@
     <Content Include="MyFinalProject\templates\status.html" />
     <Content Include="MyFinalProject\templates\tracking_changes.html" />
     <Content Include="MyFinalProject\templates\trump.html" />
+    <Content Include="MyFinalProject\templates\yomlayla.html" />
     <Content Include="requirements.txt" />
     <Content Include="MyFinalProject\static\content\bootstrap.css" />
     <Content Include="MyFinalProject\static\content\bootstrap.min.css" />

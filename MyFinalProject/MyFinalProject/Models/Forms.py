@@ -56,3 +56,7 @@ class Covid19DayRatio(FlaskForm):
 class OlympicMedals(FlaskForm):
     country = SelectField('Select a Country:' , validators = [DataRequired] )
     subnmit = SubmitField('submit')
+
+class YomLayla(FlaskForm):
+    yl = RadioField('Choose Day or Night:' , validators = [DataRequired] , choices=[('1', 'Day'), ('5', 'Night')])
+    subnmit = SubmitField('Submit')

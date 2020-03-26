@@ -44,7 +44,7 @@ def plot_to_img(fig):
     pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
     return pngImageB64String
 
-def covid19_day_ratio(df , countries , start_date , end_date):
+def covid19_day_ratio(df , countries , start_date , end_date , rolling_window):
     df1 = df.drop(['Lat' , 'Long' , 'Province/State'], 1)
     df1 = df1.rename(columns={'Country/Region': 'Country'})
     df1 = df1.groupby('Country').sum()
@@ -62,6 +62,9 @@ def covid19_day_ratio(df , countries , start_date , end_date):
         df1['D2'] = df1['S1'] - df1['S2']
         df1['R'] = df1['D1'] / df1['D2']
         df_new[col] = list(df1['R'])
+        df_new = df_new.replace([np.inf, -np.inf], np.nan)
+        df_new = df_new.fillna(value=0)
+        df_new[col] = df_new[col].rolling(window=rolling_window,center=False).mean()
     df_new = df_new.replace([np.inf, -np.inf], np.nan)
     df_new = df_new.fillna(value=0)
     df_new = df_new.set_index('Dates')

@@ -169,23 +169,27 @@ def covid19():
         countries = form1.countries.data 
         start_date = form1.start_date.data
         end_date = form1.end_date.data
+        rolling_window = form1.rolling_window.data
         
-        df_tmp = covid19_day_ratio(df_confirmed , countries , start_date , end_date)
+        df_tmp = covid19_day_ratio(df_confirmed , countries , start_date , end_date , rolling_window)
         fig = plt.figure()
         ax = fig.add_subplot(111)
-        df_tmp.plot(ax = ax , kind = 'line', figsize = (24, 6) , fontsize = 22 , grid = True)
+        ax.set_ylim(0 , 3)
+        df_tmp.plot(ax = ax , kind = 'line', figsize = (24, 10) , fontsize = 22 , grid = True)
         chart_confirmed = plot_to_img(fig)
 
-        df_tmp = covid19_day_ratio(df_deaths , countries , start_date , end_date)
+        df_tmp = covid19_day_ratio(df_deaths , countries , start_date , end_date , rolling_window)
         fig = plt.figure()
         ax = fig.add_subplot(111)
-        df_tmp.plot(ax = ax , kind = 'line' , figsize = (24, 6) , fontsize = 22 , grid = True)
+        ax.set_ylim(0 , 3)
+        df_tmp.plot(ax = ax , kind = 'line' , figsize = (24, 10) , fontsize = 22 , grid = True)
         chart_deaths = plot_to_img(fig)
 
-        df_tmp = covid19_day_ratio(df_recovered , countries , start_date , end_date)
+        df_tmp = covid19_day_ratio(df_recovered , countries , start_date , end_date , rolling_window)
         fig = plt.figure()
         ax = fig.add_subplot(111)
-        df_tmp.plot(ax = ax , kind = 'line' , figsize = (24, 6) , fontsize = 22 , grid = True)
+        ax.set_ylim(0 , 3)
+        df_tmp.plot(ax = ax , kind = 'line' , figsize = (24, 10) , fontsize = 22 , grid = True)
         chart_recovered = plot_to_img(fig)
 
     

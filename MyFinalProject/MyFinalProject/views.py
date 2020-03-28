@@ -159,7 +159,7 @@ def covid19():
 
     df_confirmed = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_covid19_confirmed_global.csv'))
     df_deaths = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_covid19_deaths_global.csv'))
-    df_recovered = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_2019-ncov-Recovered.csv'))
+    df_recovered = pd.read_csv(path.join(path.dirname(__file__), 'static/data/time_series_covid19_recovered_global.csv'))
 
     country_choices = get_countries_choices(df_confirmed)
     form1.countries.choices = country_choices       # Taken from: https://stackoverflow.com/questions/46921823/dynamic-choices-wtforms-flask-selectfield
@@ -177,7 +177,7 @@ def covid19():
         fig.subplots_adjust(bottom=0.4)
         ax = fig.add_subplot(111)
         ax.set_ylim(0 , 3)
-        df_tmp.plot(ax = ax , kind = 'bar', figsize = (32, 14) , fontsize = 22 , grid = True)
+        df_tmp.plot(ax = ax , kind = 'line', figsize = (32, 14) , fontsize = 22 , grid = True)
         chart_confirmed = plot_to_img(fig)
 
         df_tmp = covid19_day_ratio(df_deaths , countries , start_date , end_date , rolling_window)
@@ -185,7 +185,7 @@ def covid19():
         fig.subplots_adjust(bottom=0.4)
         ax = fig.add_subplot(111)
         ax.set_ylim(0 , 3)
-        df_tmp.plot(ax = ax , kind = 'bar' , figsize = (32, 14) , fontsize = 22 , grid = True)
+        df_tmp.plot(ax = ax , kind = 'line' , figsize = (32, 14) , fontsize = 22 , grid = True)
         chart_deaths = plot_to_img(fig)
 
         df_tmp = covid19_day_ratio(df_recovered , countries , start_date , end_date , rolling_window)
@@ -193,7 +193,7 @@ def covid19():
         fig.subplots_adjust(bottom=0.4)
         ax = fig.add_subplot(111)
         ax.set_ylim(0 , 3)
-        df_tmp.plot(ax = ax , kind = 'bar' , figsize = (32, 14) , fontsize = 22 , grid = True)
+        df_tmp.plot(ax = ax , kind = 'line' , figsize = (32, 14) , fontsize = 22 , grid = True)
         chart_recovered = plot_to_img(fig)
 
     

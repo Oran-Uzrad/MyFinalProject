@@ -185,7 +185,7 @@ def covid19():
         fig.subplots_adjust(bottom=0.4)
         ax = fig.add_subplot(111)
         ax.set_ylim(0 , 3)
-        df_tmp.plot(ax = ax , kind = 'line' , figsize = (32, 14) , fontsize = 22 , grid = True)
+        df_tmp.plot(ax = ax , kind = 'bar' , figsize = (32, 14) , fontsize = 22 , grid = True)
         chart_deaths = plot_to_img(fig)
 
         df_tmp = covid19_day_ratio(df_recovered , countries , start_date , end_date , rolling_window)

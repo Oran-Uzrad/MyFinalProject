@@ -229,6 +229,7 @@ def olympic_medals():
         s = df1.groupby('Discipline').size().sort_values(ascending=False)
         fig = plt.figure()
         ax = fig.add_subplot(111)
+        fig.subplots_adjust(bottom=0.4)
         s.plot(ax = ax , kind = 'bar', figsize = (24, 8) , fontsize = 22 , grid = True)
         chart = plot_to_img(fig)
 

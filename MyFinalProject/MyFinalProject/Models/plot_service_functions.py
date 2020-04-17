@@ -69,6 +69,7 @@ def covid19_day_ratio(df , countries , start_date , end_date , rolling_window):
     df_new = df_new.fillna(value=0)
     df_new = df_new.set_index('Dates')
     df_new = df_new[start_date : end_date]
+    print(df_new)
     return df_new
 
 def get_countries_choices(df):

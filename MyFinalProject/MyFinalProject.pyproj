@@ -55,6 +55,7 @@
   <ItemGroup>
     <Content Include="MyFinalProject\static\data\accdatwebsite.csv" />
     <Content Include="MyFinalProject\static\data\bush.csv" />
+    <Content Include="MyFinalProject\static\data\city_scatter.csv" />
     <Content Include="MyFinalProject\static\data\clinton.csv" />
     <Content Include="MyFinalProject\static\data\obama.csv" />
     <Content Include="MyFinalProject\static\data\olimpic-medal.csv" />
@@ -78,6 +79,7 @@
     <Content Include="MyFinalProject\static\txt\code_ex_1.txt" />
     <Content Include="MyFinalProject\templates\assignment_5130.html" />
     <Content Include="MyFinalProject\templates\bush.html" />
+    <Content Include="MyFinalProject\templates\city_scatter.html" />
     <Content Include="MyFinalProject\templates\clinton.html" />
     <Content Include="MyFinalProject\templates\covid19.html" />
     <Content Include="MyFinalProject\templates\data.html" />

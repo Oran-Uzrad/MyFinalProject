@@ -552,6 +552,34 @@ def clinton():
         form2 = form2
     )
 
+@app.route('/data/city_scatter' , methods = ['GET' , 'POST'])
+def city_scatter():
+
+    
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/city_scatter.csv'))
+    df = df.set_index('City')
+    raw_data_table = df.to_html(classes = 'table table-hover')
+
+    
+    
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.plot('Education', 'Public Transportation', kind='scatter', ax=ax)
+    for k, v in df.iterrows():
+        ax.annotate(k, v)
+    chart = plot_to_img(fig)
+
+    return render_template(
+        'city_scatter.html',
+        title='Scatter Chart Example',
+        year=datetime.now().year,
+        message='City Scatter',
+        img_under_construction = '/static/imgs/under_construction.png' ,
+        raw_data_table = raw_data_table ,
+        chart = chart
+    )
+
+
 @app.route('/data/assignment_5130' , methods = ['GET' , 'POST'])
 def assignment_5130():
 

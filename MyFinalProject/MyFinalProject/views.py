@@ -150,7 +150,7 @@ def covid19():
 
     print("Covid19")
 
-    form1 = Covid19DayRatio()
+    form1 = Covid19DayRatio(start_date = pd.Timestamp('2020-03-08'))
     chart_confirmed = '/static/imgs/covid19-world.png'
     chart_deaths = '/static/imgs/covid19-world.png'
     chart_recovered = '/static/imgs/covid19-world.png'

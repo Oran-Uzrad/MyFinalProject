@@ -651,9 +651,9 @@ def review_sentiment():
         x = svm.predict(t)
         s = x[0]
         if (s == 'negative'):
-            chart = '/static/imgs/negative.jpg'
+            chart = '/static/imgs/negative.JPG'
         else:
-            chart = '/static/imgs/Positive.jpg'
+            chart = '/static/imgs/Positive.JPG'
 
 
     

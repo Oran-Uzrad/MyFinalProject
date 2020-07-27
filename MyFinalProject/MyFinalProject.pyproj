@@ -69,9 +69,11 @@
     <Content Include="MyFinalProject\static\imgs\clinton.jpg" />
     <Content Include="MyFinalProject\static\imgs\code_ex_1.PNG" />
     <Content Include="MyFinalProject\static\imgs\covid19-world.png" />
+    <Content Include="MyFinalProject\static\imgs\negative.JPG" />
     <Content Include="MyFinalProject\static\imgs\obama.jpg" />
     <Content Include="MyFinalProject\static\imgs\olympic.png" />
     <Content Include="MyFinalProject\static\imgs\oran.jpg" />
+    <Content Include="MyFinalProject\static\imgs\Positive.JPG" />
     <Content Include="MyFinalProject\static\imgs\question_mark.jpg" />
     <Content Include="MyFinalProject\static\imgs\tichonet.png" />
     <Content Include="MyFinalProject\static\imgs\trump.jpg" />
@@ -89,6 +91,7 @@
     <Content Include="MyFinalProject\templates\plot_demo.html" />
     <Content Include="MyFinalProject\templates\project_resources.html" />
     <Content Include="MyFinalProject\templates\query.html" />
+    <Content Include="MyFinalProject\templates\review_sentiment.html" />
     <Content Include="MyFinalProject\templates\status.html" />
     <Content Include="MyFinalProject\templates\tracking_changes.html" />
     <Content Include="MyFinalProject\templates\trump.html" />

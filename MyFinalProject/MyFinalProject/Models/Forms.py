@@ -60,3 +60,7 @@ class OlympicMedals(FlaskForm):
 class YomLayla(FlaskForm):
     yl = RadioField('Choose Day or Night:' , validators = [DataRequired] , choices=[('1', 'Day'), ('5', 'Night')])
     subnmit = SubmitField('Submit')
+
+class ReviewSentiment(FlaskForm):
+    rs = TextField('Enter Review:' , validators = [DataRequired])
+    subnmit = SubmitField('Send')

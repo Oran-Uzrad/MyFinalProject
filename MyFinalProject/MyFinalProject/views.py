@@ -20,6 +20,8 @@ from MyFinalProject.Models.Forms import AllOfTheAboveForm
 from MyFinalProject.Models.Forms import Covid19DayRatio
 from MyFinalProject.Models.Forms import OlympicMedals
 from MyFinalProject.Models.Forms import YomLayla
+from MyFinalProject.Models.Forms import ReviewSentiment
+
 from MyFinalProject.Models.plot_service_functions import plot_case_1
 from MyFinalProject.Models.plot_service_functions import plot_to_img
 from MyFinalProject.Models.plot_service_functions import covid19_day_ratio
@@ -33,6 +35,14 @@ import io
 
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import confusion_matrix
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+from sklearn import preprocessing
 
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
@@ -207,16 +217,19 @@ def covid19():
         
     )
 
+# This is the route of the query
+
 @app.route('/olympic-medals' , methods = ['GET' , 'POST'])
 def olympic_medals():
 
     print("Olympic Medals")
 
-    form1 = OlympicMedals()
+    form1 = OlympicMedals() # Instantiating the query form
     chart = '/static/imgs/olympic.png'
 
-   
+   # Reading the data file
     df = pd.read_csv(path.join(path.dirname(__file__), 'static/data/olimpic-medal.csv'))
+    #Pulling the list of countries from the datadet and inserting it into the form
     country_choices = list(set(df['Country']))
     clean_country_choices = [x for x in country_choices if x == x]
     m = list(zip(clean_country_choices , clean_country_choices))
@@ -615,5 +628,39 @@ def tracking_changes():
     )
 
 
+@app.route('/review_sentiment' , methods = ['GET' , 'POST'])
+def review_sentiment():
 
+    form1 = ReviewSentiment()
+    chart = ''
+
+
+    if request.method == 'POST':
+        review_text = form1.rs.data
+        df = pd.read_csv('https://raw.githubusercontent.com/Oran-Uzrad/DataFiles/master/IMDB_Dataset.csv')
+        df_short = df.sample(5000)
+        corpus = df_short['review']
+        y = df_short['sentiment'].to_numpy()
+        vectorizer = TfidfVectorizer()
+        vectorizer.fit_transform(corpus)
+        X=vectorizer.fit_transform(df_short['review'])
+        svm = SVC(kernel = 'linear')
+        svm.fit(X , y)
+        l = [review_text]
+        t=vectorizer.transform(l)
+        x = svm.predict(t)
+        s = x[0]
+        if (s == 'negative'):
+            chart = '/static/imgs/negative.jpg'
+        else:
+            chart = '/static/imgs/Positive.jpg'
+
+
+    
+    return render_template(
+        'review_sentiment.html',
+        img_under_construction = '/static/imgs/under_construction.png',
+        form1 = form1,
+        chart = chart
+    )
     

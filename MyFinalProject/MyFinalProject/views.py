@@ -47,7 +47,7 @@ from sklearn import preprocessing
 from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
 
-app.config['SECRET_KEY'] = 'The first argument to the field'
+app.config['SECRET_KEY'] = 'Review Sentiment Prediction as part of Machine Learning'
 
 
 @app.route('/')

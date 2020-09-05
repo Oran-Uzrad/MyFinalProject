@@ -65,6 +65,20 @@ def home():
         year=datetime.now().year
     )
 
+@app.route('/yesodot090620')
+def yesodot090620():
+    
+    return render_template(
+        'yesodot090620.html',
+        title='',
+        one_image = '/static/imgs/one.JPG',
+        two_image = '/static/imgs/two.JPG',
+        three_image = '/static/imgs/three.JPG',
+        four_image = '/static/imgs/four.JPG',
+        five_image = '/static/imgs/five.JPG',
+        year=datetime.now().year
+    )
+
 @app.route('/contact')
 def contact():
 

@@ -107,6 +107,7 @@
     <Content Include="MyFinalProject\templates\trump.html" />
     <Content Include="MyFinalProject\templates\yesodot090620.html" />
     <Content Include="MyFinalProject\templates\yesodot090920.html" />
+    <Content Include="MyFinalProject\templates\yesodot091320.html" />
     <Content Include="MyFinalProject\templates\yomlayla.html" />
     <Content Include="requirements.txt" />
     <Content Include="MyFinalProject\static\content\bootstrap.css" />

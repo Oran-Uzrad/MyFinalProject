@@ -88,6 +88,15 @@ def yesodot090920():
         year=datetime.now().year
     )
 
+@app.route('/yesodot091320')
+def yesodot091320():
+    
+    return render_template(
+        'yesodot091320.html',
+        title='',
+        year=datetime.now().year
+    )
+
 @app.route('/contact')
 def contact():
 

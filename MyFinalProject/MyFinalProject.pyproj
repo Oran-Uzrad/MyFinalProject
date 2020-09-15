@@ -96,6 +96,7 @@
     <Content Include="MyFinalProject\templates\covid19.html" />
     <Content Include="MyFinalProject\templates\data.html" />
     <Content Include="MyFinalProject\templates\forms_demo.html" />
+    <Content Include="MyFinalProject\templates\layout_yesodot.html" />
     <Content Include="MyFinalProject\templates\obama.html" />
     <Content Include="MyFinalProject\templates\olympic.html" />
     <Content Include="MyFinalProject\templates\plot_demo.html" />

@@ -1,4 +1,4 @@
-﻿{% extends "layout.html" %}
+﻿{% extends "layout_yesodot.html" %}
 
 
 {% block content %}
@@ -130,6 +130,22 @@
 
 <hr />
 
+<div class="row my-grid-borders">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
 
+                    <td><a class="btn btn-info heb" href=#>Next</a></td>
+                    <td class="heb"><a class="btn btn-info heb" href="{{ url_for('yesodot090920') }}">Prev </a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
 
-{% endblock %}
+    {% endblock %}

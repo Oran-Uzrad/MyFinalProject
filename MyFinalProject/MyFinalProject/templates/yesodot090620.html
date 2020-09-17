@@ -1,4 +1,4 @@
-﻿{% extends "layout.html" %}
+﻿{% extends "layout_yesodot.html" %}
 
 
 {% block content %}
@@ -162,6 +162,24 @@
     <div class="col-md-3">
         <br /><br /><br /><br /><br />
         <img class="contain" src={{ five_image }} alt='Missing' width="50" height="60">
+    </div>
+</div>
+
+<div class="row my-grid-borders">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+
+                    <td><a class="btn btn-info heb" href="{{ url_for('yesodot090920') }}">Next</a></td>
+                    <td class="heb"><a class="btn btn-info heb" href=#>Prev </a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-4">
     </div>
 </div>
 

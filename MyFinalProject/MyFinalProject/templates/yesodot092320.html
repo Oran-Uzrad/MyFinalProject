@@ -1,0 +1,75 @@
+﻿{% extends "layout_yesodot.html" %}
+
+
+{% block content %}
+
+<div class="jumbotron">
+    <h2 class="heb">דף עבודה לשיעור של ה 23.9.2020</h2>
+    <br /><br />
+    <h4 class="heb"> </h4>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8 heb">
+        <br /><br /><br /><br />
+
+        <p lang="he"><span style="font-family:Tahoma,Geneva,sans-serif"><span style="font-size:14px">זהו דף הדרכה לשיעור של ה 23.9.20 עם אורן</span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p lang="he"><span style="font-size:18px"><strong><span style="font-family:Tahoma,Geneva,sans-serif">חלק 1</span></strong></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="font-family:Tahoma,Geneva,sans-serif"><span style="font-size:14px">משתנים מהטיפוס string (מחרוזת)</span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="font-family:Tahoma,Geneva,sans-serif"><span style="font-size:14px">הכרנו עד עכשיו משתנים מהטיפוסים int, double ו- bool.</span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="font-family:Tahoma,Geneva,sans-serif"><span style="font-size:14px">נכיר טיפוס חדש מסוג string היכול לשמור מחרוזת תווים, כלומר שמות, קטעי טקסט קצרים וכו&#39;. הטיפוס לא מכיל ערך מספרי ולכן לא נוכל לבצע פעולות חשבוניות איתו.</span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="font-family:Tahoma,Geneva,sans-serif"><span style="font-size:14px">במשימת Driving Ticket שקיבלתם ב repl למשל, אתם מתבקשים לקלוט את שם הנהג ואחר כך להדפיס אותו. הדרך ליישם את זה היא להגדיר משתנה מטיפוס string ולקלוט אליו את שם הנהג.</span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><span style="font-family:Tahoma,Geneva,sans-serif"><span style="font-size:14px">בקישור כאן תמצאו מצגת קצרה המפרטת יותר לגבי הצהרה ושימוש במשתנים מסוג string</span></span></p>
+
+        <p>&nbsp;</p>
+
+        <p><strong><a href="https://drive.google.com/file/d/15e_C3MUI037lIxMl21QcEAkdHill0C7E/view?usp=sharing"><span style="font-family:Tahoma,Geneva,sans-serif"><span style="font-size:14px">קישור למצגת</span></span></a></strong></p>
+
+        <p lang="he">&nbsp;</p>
+
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>
+
+<hr />
+
+<div class="row my-grid-borders">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+
+                    <td><a class="btn btn-info heb" href=#>Next</a></td>
+                    <td class="heb"><a class="btn btn-info heb" href="{{ url_for('yesodot091620') }}">Prev </a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+
+    {% endblock %}

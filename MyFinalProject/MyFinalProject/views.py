@@ -103,7 +103,7 @@ def yesodot091620():
 
 @app.route('/yesodot092320')
 def yesodot092320():
-    return render_template('yesodot092320.html', title='', year=datetime.now().year)
+    return render_template('yesodot092320.html', title='', year=datetime.now().year , repl = '/static/imgs/repl1.JPG')
 
 @app.route('/contact')
 def contact():

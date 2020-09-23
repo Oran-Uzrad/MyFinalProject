@@ -80,6 +80,8 @@
     <Content Include="MyFinalProject\static\imgs\oran.jpg" />
     <Content Include="MyFinalProject\static\imgs\Positive.JPG" />
     <Content Include="MyFinalProject\static\imgs\question_mark.jpg" />
+    <Content Include="MyFinalProject\static\imgs\repl1.JPG" />
+    <Content Include="MyFinalProject\static\imgs\repl1.png" />
     <Content Include="MyFinalProject\static\imgs\seven.JPG" />
     <Content Include="MyFinalProject\static\imgs\six.JPG" />
     <Content Include="MyFinalProject\static\imgs\ten.JPG" />

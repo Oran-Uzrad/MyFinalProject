@@ -109,6 +109,10 @@ def yesodot092320():
 def yesodot093020():
     return render_template('yesodot093020.html', title='', year=datetime.now().year)
 
+@app.route('/yesodot101420')
+def yesodot101420():
+    return render_template('yesodot101420.html', title='', year=datetime.now().year)
+
 @app.route('/contact')
 def contact():
 
